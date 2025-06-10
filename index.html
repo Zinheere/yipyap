@@ -45,16 +45,15 @@
 				const buff = await res.blob();
 				return buff.type.startsWith("image/");
 			}
-			function yap() {
+			async function yap() {
 				const input = document.getElementById("input");
-                if (isImage(input.value)) {
-                    document.getElementById("text").textContent = ""
-                    document.getElementById("img").src = input.value
-                } else {
-                    
-                    document.getElementById("img").src = ""
-                    document.getElementById("text").textContent = input.value
-                }
+				if (await isImage(input.value)) {
+					document.getElementById("text").textContent = ""
+					document.getElementById("img").src = input.value
+				} else {
+					document.getElementById("img").src = ""
+					document.getElementById("text").textContent = input.value
+				}
 				input.value = "";
 			}
 			function color() {
