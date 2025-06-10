@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>yipyap</title>
+    </head>
+    <body>
+        <div style="text-align: center; font-size: 600%; font-family: sans-serif;">
+            <h1 id="text">Welcome!</h1>
+            <input id="input" placeholder="yapping">
+            <button onclick="yap()">yap!</button></div>
+            <button onclick="color()">toggle color</button>
+        <script>
+            const input = document.getElementById("input")
+            input.addEventListener("keydown", function(event) {
+                console.log(input.value)
+                if (event.key === 'Enter') {
+                    yap()
+                }
+            });
+            function yap() {
+                const input = document.getElementById("input")
+                document.getElementById("text").textContent = input.value
+                input.value = ""
+            }
+        </script>
+    </body>
+</html>
