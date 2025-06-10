@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>yipyap</title>
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    </head>
-    <body>
-        <div style="text-align: center; font-size:8vw; font-family: sans-serif;">
-            <h1 id="text">Welcome!</h1>
-            <input id="input" placeholder="yapping">
-            <button onclick="yap()">yap!</button>
-            <button onclick="color()">toggle color</button>
-        </div>
-        <script>
-            const input = document.getElementById("input")
-            input.addEventListener("keydown", function(event) {
-                console.log(input.value)
-                if (event.key === 'Enter') {
-                    yap()
-                }
-            });
-            function yap() {
-                const input = document.getElementById("input")
-                document.getElementById("text").textContent = input.value
-                input.value = ""
-            }
-        </script>
-    </body>
+	<head>
+		<title>yipyap</title>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<style>
+			body {
+				background-color: white;
+				color: black;
+			}
+
+			.dark-mode {
+				background-color: black;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="text-align: center; font-size: 8vw; font-family: sans-serif">
+			<h1 id="text">Welcome!</h1>
+			<input id="input" placeholder="yapping" />
+			<button onclick="yap()">yap!</button>
+			<button onclick="color()">toggle color</button>
+		</div>
+		<script>
+			const input = document.getElementById("input");
+			input.addEventListener("keydown", function (event) {
+				console.log(input.value);
+				if (event.key === "Enter") {
+					yap();
+				}
+			});
+			function yap() {
+				const input = document.getElementById("input");
+				document.getElementById("text").textContent = input.value;
+				input.value = "";
+			}
+			function color() {
+				var element = document.body;
+				element.classList.toggle("dark-mode");
+			}
+		</script>
+	</body>
 </html>
