@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>yipyap</title>
+        <link rel="icon" type="image/x-icon" href="/icon.jpg">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<style>
 			body {
@@ -13,11 +14,15 @@
 				background-color: black;
 				color: white;
 			}
+            #bar {
+                text-align: center;
+                font-size: 8vw;
+                font-family: sans-serif
+            }
 		</style>
 	</head>
-
 	<body>
-		<div style="text-align: center; font-size: 8vw; font-family: sans-serif">
+		<div id="bar">
 			<h1 id="text">Welcome!</h1>
 			<input id="input" placeholder="yapping" />
 			<button onclick="yap()">yap!</button>
@@ -39,6 +44,12 @@
 			function color() {
 				var element = document.body;
 				element.classList.toggle("dark-mode");
+			}
+			async function checkImage(url) {
+				const res = await fetch(url);
+				const buff = await res.blob();
+
+				return buff.type.startsWith("image/");
 			}
 		</script>
 	</body>
